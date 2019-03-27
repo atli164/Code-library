@@ -1,7 +1,7 @@
 struct matrix
 {
 	vvd mat;
-	int r, n, m;
+	int n, m;
 	matrix(int _n, int _m) {
 		n = _n, m = _m;
 		mat = vvd(n, vd(m, 0.0));
@@ -10,13 +10,12 @@ struct matrix
 		return mat[i][j];
 	}
 	void rref() {
-		int i, j, k, t; r = 0;
+		int i, j, k, t; 
 		double p;
 		for (i = 0; i < n; i++) {
 			t = -1;
 			while (++t < m && fabs(mat[i][t]) < EPS);
 			if (t == m) continue;
-			r++;
 			p = mat[i][t];
 			for (j = t; j < m; j++) mat[i][j] = mat[i][j]/p;
 			for (j = 0; j < n; j++) {
