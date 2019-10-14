@@ -2,6 +2,7 @@
 using namespace std;
 #define rep(i,a,b) for(auto i=(a); i != (b); ++i)
 typedef long long ll;
+typedef __int128 ml;
 typedef long double ld;
 typedef pair<int,int> ii;
 typedef vector<int> vi;
