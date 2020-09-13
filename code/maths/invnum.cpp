@@ -6,7 +6,6 @@ ll merge(vi& v, vi& l, vi& r) {
     else if(l[i] <= r[j]) v[i + j] = l[i], ++i;
     else v[i + j] = r[j], cnt += l.size() - i, ++j;
   } return cnt; }
-
 ll invnum(vi &v) { if(v.size() < 2) return 0;
   int m = v.size() / 2; vi l(m), r(v.size() - m);
   copy(v.begin(), v.begin() + m, l.begin());
