@@ -1,5 +1,4 @@
-struct matrix
-{
+struct matrix {
 	vvd mat;
 	int n, m;
 	matrix(int _n, int _m) {
