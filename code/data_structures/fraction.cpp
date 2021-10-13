@@ -77,7 +77,7 @@ template <typename T> struct fraction {
         out << o.p << '/' << o.q;
         return out;
     }
-    friend fraction<T> abs(const fraction<T> &x) {
+    friend fraction<T> abs(const fraction<T>& x) {
         return x < 0 ? -x : x;
     }
 };

@@ -88,6 +88,26 @@ template <typename T> struct matrix {
         }
         return mat;
     }
+    matrix<T> inverse() {
+        assert(r == c);
+        matrix<T> aug(r, 2 * c);
+        for(int i = 0; i < r; ++i) {
+            for(int j = 0; j < c; ++j) {
+                aug(i, j) = (*this)(i, j);
+            }
+            aug(i, i + c) = T(1);
+        }
+        T det; int rnk;
+        aug = aug.rref(det, rnk);
+        assert(rnk == c);
+        matrix<T> res(r, c);
+        for(int i = 0; i < r; ++i) {
+            for(int j = 0; j < c; ++j) {
+                res(i, j) = aug(i, j + c);
+            }
+        }
+        return res;
+    }
     friend std::ostream& operator <<(std::ostream& out, const matrix<T>& o) {
         for(int i = 0; i < o.r; ++i) {
             for(int j = 0; j < o.c; ++j) {
