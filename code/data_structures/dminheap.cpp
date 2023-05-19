@@ -7,7 +7,7 @@ struct DMinHeap {
             size_t c = child_num * i + 1, mnind = c;
             if(c >= dat.size()) break;
             for(size_t j = 1; j < child_num; ++j) {
-                if(j + c < dat.size() && dat[j + c] < dat[c]) mnind = j + c;
+                if(j + c < dat.size() && dat[j + c] < dat[mnind]) mnind = j + c;
             }
             if(dat[mnind] >= dat[i]) break;
             std::swap(dat[i], dat[mnind]);
