@@ -74,7 +74,7 @@ template <typename T> struct poly {
         return make_pair(q, r);
     }
     poly<T> mod_pow(ll e, const poly& m) const {
-        vector<T> id({ T(0), T(1) });
+        vector<T> id({ T(1) });
         poly<T> res(id), b(coeff);
         while(e) {
             if(e & 1) res = (res * b).div_rem(m).second;
